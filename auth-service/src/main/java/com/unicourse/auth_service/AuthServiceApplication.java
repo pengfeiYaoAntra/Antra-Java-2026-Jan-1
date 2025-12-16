@@ -133,3 +133,79 @@ public class AuthServiceApplication {
 	}
 
 }
+/*
+	gmail -> marketing -> pengfei.yao@antra.com -> google chat 
+	download google chat and google doc 
+
+	resume -> java (8, 17, 21) spring boot 2.7 + spring cloud + data base (relational , non relational (not must)) + S3 (must) + monitoring(aws cloud watch)
+		+testing(junit, mokito )   + aws services  + personal exp (python or AI,DL, RL, ...)
+	
+	-> link -> submit your resume -> hard to modify 
+	-> marketing name -> matthew yao ... and marketing email, marketing phone number -> location, city + sate.... edu.... 
+
+	design doc -> 
+
+
+	kafka: walmart 
+
+	what is message queue?
+		producer -> data (message) -> queue(store message(s)) -> comsumer 
+		allows diff services communicate with each other and exchange messages(data) asynchronously 
+	
+		service A -> producer -> can produce messsage 100 meesages / s
+	
+		service B -> comsumer -> can consume message 30 messages / s
+
+		if u do not want lost your messasge sent from service A, you have to to put something between A and B.  -> messaging queue
+
+	
+
+High performance -> 
+		producer 1		-> [queue] -> consumer 1, 2....
+		producer 2
+
+		problem -> as the # of producer and consumer increase, we can find that consumers compete for the same messasge at the same time
+
+		producer 1		-> [topic1 ,2] -> consumer 1, 2....
+		producer 2
+
+		you have different services -> producer message and insert into topic 1 [ high pressure] -> how to solve high pressure on topic 1
+
+
+		partition -> load balancing +提高吞吐量
+				topic -> partition 1 -> [message 1,2,3]. -> consumer 1
+						-> partition 2 ->[message 4,5,6] ->  consumer 3 
+						-> partion 3 ->[message 7,8,9]  -> consumer 4..
+						...
+
+	paritions are running in different computer -> high scalability 
+
+	
+	high availability:
+		partition 1 -> leader
+		partition 2 and 3 .... replicas 
+	
+	
+	
+	
+	producer -> kafka cluster[broker0 -> [topicA-partition0 (leader), ], broker1->[topic A - parition1], broker2 ->[topic partition2] ] ->consumer group[consumer1, 2,..]
+	
+	offset -> message index -> __consumer_offsets -> integer -> the position of a message in the partition log 
+
+	how consumers consume message
+		1: when the consumer starts -> it tell kafka -> hi I want to subscribe to these topics
+		2: send request to the broker -> do you have new message for me -> continuously send reuqests.
+		3: the broker decides how much data to return each time according the settings:
+			min bytes -> data size before responding
+			max ms -> max wait time 
+			max byte: max data size per fetch
+		4: message enter local queue
+				the broker's response is first placed into an internal sumer queue , act like a buffer
+		5: the application -> api -> poll() method -> pyll amount of messages from buffer
+
+
+		paritioning strategy: 
+			
+
+
+*/
