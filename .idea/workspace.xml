@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08c5a719-8b56-4a86-a2fa-6ceb662bc499" name="Changes" comment="day1-2 notes">
-      <change afterPath="$PROJECT_DIR$/first-two-week/src/main/java/com/example/firsttwoweek/DayThree.java" afterDir="false" />
+    <list default="true" id="08c5a719-8b56-4a86-a2fa-6ceb662bc499" name="Changes" comment="day3 notes">
+      <change afterPath="$PROJECT_DIR$/first-two-week/src/main/java/com/example/firsttwoweek/Day4.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first-two-week/src/main/java/com/example/firsttwoweek/DayThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/first-two-week/src/main/java/com/example/firsttwoweek/DayThree.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,13 +124,22 @@
       <option name="project" value="LOCAL" />
       <updated>1769631994043</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="day3 notes">
+      <option name="closed" value="true" />
+      <created>1769785760023</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1769785760023</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="day1 notes" />
     <MESSAGE value="day1-2 notes" />
-    <option name="LAST_COMMIT_MESSAGE" value="day1-2 notes" />
+    <MESSAGE value="day3 notes" />
+    <option name="LAST_COMMIT_MESSAGE" value="day3 notes" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

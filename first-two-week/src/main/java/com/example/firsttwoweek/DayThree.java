@@ -90,6 +90,10 @@ import java.util.concurrent.*;
  *      utility class                                        interface                               interface
  *      use for creating thread pool                        the simplest way to execute a task      more functions that executor you can submit and stop task
  *
+ * Method	Functional Interface	Input (from previous task)	Return Value	Purpose
+ * thenApply(fn)	Function<T, R>	Yes	                            Yes	        Transform: Change the result into something else.
+ * thenAccept(consumer)	Consumer<T>	Yes	                            No (void)	Consume: Use the result (e.g., print or save).
+ * thenRun(runnable)	Runnable	No	                            No (void)	Action: Do something after completion, ignoring the result.
  * @FunctionalInterface
  * public interface Supplier<T> {
  *
@@ -245,33 +249,83 @@ public class DayThree {
 
 
 
-        CompletableFuture<Void> completableFuture  = CompletableFuture.runAsync(()->{
-            System.out.println(Thread.currentThread().getName());
-            try{
-                TimeUnit.SECONDS.sleep(1);
-            }catch (InterruptedException e){
-                e.printStackTrace();
-            }
-        });
-        System.out.println(completableFuture.get());
-        ExecutorService threadpool = Executors.newFixedThreadPool(3);
-
-        CompletableFuture<Void> completableFuture1  = CompletableFuture.runAsync(()->{
-            System.out.println(Thread.currentThread().getName());
-            try{
-                TimeUnit.SECONDS.sleep(1);
-            }catch (InterruptedException e){
-                e.printStackTrace();
-            }
-        },threadpool);
-        System.out.println(completableFuture1.get());
-
-        Executors.newVirtualThreadPerTaskExecutor();
+//        CompletableFuture<Void> completableFuture  = CompletableFuture.runAsync(()->{
+//            System.out.println(Thread.currentThread().getName());
+//            try{
+//                TimeUnit.SECONDS.sleep(1);
+//            }catch (InterruptedException e){
+//                e.printStackTrace();
+//            }
+//        });
+//        System.out.println(completableFuture.get());
+//        ExecutorService threadpool = Executors.newFixedThreadPool(3);
+//
+//        CompletableFuture<Void> completableFuture1  = CompletableFuture.runAsync(()->{
+//            System.out.println(Thread.currentThread().getName());
+//            try{
+//                TimeUnit.SECONDS.sleep(1);
+//            }catch (InterruptedException e){
+//                e.printStackTrace();
+//            }
+//        },threadpool);
+//        System.out.println(completableFuture1.get());
+//
+//        Executors.newVirtualThreadPerTaskExecutor();
 
 
 
 
         // three example about thenApply, thenAccept, thenRun()...
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+        CompletableFuture<Integer> completableFuture = CompletableFuture.supplyAsync(()->{
+            System.out.println(Thread.currentThread().getName());
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("step 1:Email is sending");
+            return 1;
+        },executorService).thenApply(r->{
+            System.out.println("step 2: receiving an email");
+            return r + 1;
+        }).thenApply(r ->{
+            System.out.println("step 3: processing an email");
+            return r + 1;
+        });
+        System.out.println("final result: " + completableFuture.join());
+
+        executorService.shutdown();
+
+
+        CompletableFuture<Void> future = CompletableFuture.supplyAsync(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return 1;
+        }).thenRun(() -> {
+            System.out.println("Task 2: Running after Task 1, but not using its result.");
+        });
+
+        future.join();
+
+        CompletableFuture<Void> future1 = CompletableFuture.supplyAsync(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            System.out.println("Task 1: Fetching data...");
+            return "Hello, World!";
+        }).thenAccept(result -> {
+            System.out.println("Task 2: Printing the result: " + result);
+        });
+
+        future1.join();
+
 
 
 
