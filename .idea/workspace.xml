@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08c5a719-8b56-4a86-a2fa-6ceb662bc499" name="Changes" comment="day6 note">
-      <change afterPath="$PROJECT_DIR$/first-two-week/src/main/java/com/example/firsttwoweek/Day7.java" afterDir="false" />
+    <list default="true" id="08c5a719-8b56-4a86-a2fa-6ceb662bc499" name="Changes" comment="day7 note">
+      <change afterPath="$PROJECT_DIR$/first-two-week/src/main/java/com/example/firsttwoweek/Day8.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/java/com/unicourse/config_server/ConfigServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/java/com/unicourse/config_server/ConfigServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/review-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/review-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770150586154</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="day7 note">
+      <option name="closed" value="true" />
+      <created>1770301883483</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1770301883483</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -215,7 +223,8 @@
     <MESSAGE value="day3 notes" />
     <MESSAGE value="day3-4 note" />
     <MESSAGE value="day6 note" />
-    <option name="LAST_COMMIT_MESSAGE" value="day6 note" />
+    <MESSAGE value="day7 note" />
+    <option name="LAST_COMMIT_MESSAGE" value="day7 note" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
